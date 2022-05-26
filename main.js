@@ -34,25 +34,23 @@ natalia.cursosAprobados.push("Curso de Responsive Design");
 class Student2 {
     constructor ({
         name,
-        age, 
+        age,
         email,
-        facebook,
-        twitter,
         cursosAprobados = [],
-    })
-    {
-    this.name = name;
-    this.email = email;
-    this.age = age;
-    this.cursosAprobados = cursosAprobados;
+    }) {
+        this.name = name;
+        this.email = email;
+        this.age = age; 
+        this.cursosAprobados = cursosAprobados;
     }
+
     aprobarCurso(nuevoCursito) {
         this.cursosAprobados.push(nuevoCursito);
-    }
+        }
     }
 
 const miguelito = new Student2({
+    email: "Miguelito@platzi.com",
     name: "Miguel",
-    email: "Miguel.com",
     age: 28,
 });

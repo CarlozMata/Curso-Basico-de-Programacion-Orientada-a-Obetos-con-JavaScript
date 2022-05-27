@@ -1,24 +1,3 @@
-class Comment {
-    constructor({
-        content,
-        studentName,
-        studentRole = "estudiante",
-    }) {
-        this.content = content;
-        this.content = studentName;
-        this.content = studentRole;
-        this.likes = 0;
-    }
-    publicar() {
-        console.log(this.studentName + " (" + this.studentRole + ")");
-        console.log(this.likes + " likes");
-        console.log(this.content);
-
-    }
-}
-
-
-
 function videoPlay(id) {
     const urlSecreta = "https://platziultrasecreto.com/" + id;
     console.log("Se esta reproduciendo desde la url" + urlSecreta);   
@@ -35,6 +14,7 @@ function videoStop(id) {
         this.name - name;
         this.videoID - videoID;
     }
+
     reproducir() {
         videoPlay(this.videoID);
     }
@@ -141,13 +121,6 @@ const escuelaVgs = new learningPaths({
         this.approvedCourses = approvedCourses;
         this.learningPaths = learningPaths;
     }
-    publicarComentario(commentContent) {
-        const comment = new Comment({
-            content: commentContent,
-            studentName: this.name, 
-        });
-        comment.publicar();
-    }
 }
 
 class FreeStudent extends Student {
@@ -186,22 +159,6 @@ class ExpertStudent extends Student {
             this.approvedCourses.push(newCourse);
     } 
 }
-class TeacherStudent extends Student {
-    constructor(props) {
-    super(props);
-    }
-    approvedCourses(newCourse) {
-            this.approvedCourses.push(newCourse);
-    } 
-    publicarComentario(commentContent) {
-        const comment = new Comment({
-            content:commentContent,
-            studentName:this.name,
-            studentRole: "profesor",
-        });
-        comment.publicar();
-    }
-}
 
 
 const juan2 = new FreeStudent({
@@ -225,12 +182,4 @@ const miguelito = new BasicStudent({
         escuelaVgs, 
         escuelaWeb,
     ],
-});
-
-const Freddy = new TeacherStudent({
-    name: "Freddy Vega",
-    username: "freddier",
-    correo: "freddy@hotmail.com",
-    twitter: "freddier",
-    facebook: "freedier",
 });
